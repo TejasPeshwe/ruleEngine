@@ -43,5 +43,59 @@ Body: "This is an example response."
 
 The <String> in ResponseEntity<String> refers to the type of the response body.
 It specifies that the body of the HTTP response will be a String.
+ ------------------------------------
+
+Q))
+so in the above calling the getExample()  method and declaring it, is it done at the same place
+ans::
+No, calling the getExample() method and declaring it are not done at the same place. Here's why:
+
+Declaration:::
+The method getExample() is declared in your controller class, 
+where you define its behavior and annotate it with @GetMapping("/example") to map it to the /example endpoint.
+
+This is a server-side operation—you define it so that the Spring framework 
+knows what to execute when a request is sent to the specified endpoint.
+
+Calling::
+The method is called by the Spring framework when a client sends an HTTP GET request to the /example endpoint.
+This happens automatically because the @GetMapping annotation registers the method as a handler for the /example path.
+The calling of the method is triggered by the request, not by explicit code elsewhere.
+
+Declaration (Server-side):
+
+Done in the backend by the developer.
+example is above
+
+Calling (Client-side):
+
+Triggered by the client when an HTTP GET request is sent to /example.
+Example using a browser, Postman, or cURL:
+eg:
+curl -X GET http://localhost:8080/example
+The Spring framework identifies the matching method (getExample() in this case) based on the @GetMapping annotation and executes it.
+
+Analogy:
+Think of the getExample() method as a button on a webpage:
+
+Declaring the method is like placing the button on the page and defining what happens when it is clicked. --done by developers as in the above
+Calling the method is like a user clicking the button, which triggers the defined action.   --- comes form the front end side, when a click is made by the user
+--- routing is done by spring framework
+
+-------------------------------------------------------------
+
+Routing by Spring Framework:
+Explanation: Spring Framework acts as the "traffic controller," routing incoming HTTP requests to the correct method based on annotations like @GetMapping, @PostMapping, etc., and the request's path and type.
+Process:::
+User sends a request (e.g., GET /example).
+Spring matches this request to the method annotated with @GetMapping("/example").
+Spring executes the method (getExample()) and returns the result to the client.
+
+-----------------------
+
+Generics refere generic_notes.doc
+
+
+
 
 

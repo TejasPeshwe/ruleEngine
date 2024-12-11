@@ -95,6 +95,44 @@ Spring executes the method (getExample()) and returns the result to the client.
 
 Generics refere generic_notes.doc
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+if (bankingAccounts.isEmpty()) {
+    return new ArrayList<>();
+}
+
+what will be the type of new ArrayList<>();  is it same as List<BankingAccountReadModel> 
+ans::
+
+Yes, the type of new ArrayList<>() in this context will be the same as List<BankingAccountReadModel>.
+
+Explanation:
+Type Inference:
+
+Java's diamond operator (<>) enables type inference for generic types based on the context.
+Here, the method's return type is declared as List<BankingAccountReadModel>. Therefore, the compiler infers the type for new ArrayList<>() as ArrayList<BankingAccountReadModel>.
+Compatibility:
+
+ArrayList implements the List interface, so new ArrayList<>() can be assigned to a variable or returned in a method expecting a List.
+Result:
+
+The returned new ArrayList<>() is effectively a List<BankingAccountReadModel>.
+ equivalent code::
+if (bankingAccounts.isEmpty()) {
+    return new ArrayList<BankingAccountReadModel>();
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
